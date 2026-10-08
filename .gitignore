@@ -220,3 +220,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local project audit tools, caches and extracted document text
+.audit*/
+.audit*.py
+.audit*.ps1
