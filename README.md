@@ -36,9 +36,9 @@ CISI — коллекция из 1460 научных статей по библ�
 
 ```bash
 git clone https://github.com/AlexKorn2531/Information_retrieval-IR-.git
-cd student_research_work
-pip install -r requirements.txt
-jupyter notebook
+cd Information_retrieval-IR-
+python -m pip install -r requirements.txt
+python -m jupyter notebook notebook/information_retrieval.ipynb
 ```
 
-Открыть notebook/information_retrieval.ipynb и выполнить все ячейки.
+При первом запуске ноутбук проверит ресурсы NLTK (`punkt`, `punkt_tab`, `stopwords`, `wordnet`) и попробует скачать отсутствующие.
