@@ -225,3 +225,8 @@ __marimo__/
 .audit*/
 .audit*.py
 .audit*.ps1
+
+# Microsoft Office lock files and Windows folder metadata
+~$*
+Thumbs.db
+desktop.ini

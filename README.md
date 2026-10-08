@@ -67,5 +67,13 @@ python -m unittest discover -s tests -v
 python scripts/export_results.py
 ```
 
-Основной ноутбук и `information_retrieval copy.ipynb` содержат одинаковый код.
+Рабочий ноутбук: `notebook/information_retrieval.ipynb`.
 Запуск поддерживается из корня репозитория и из каталога `notebook`.
+
+## Структура проекта
+
+- `notebook/` — ноутбук и исходные данные CISI.
+- `docs/` — документы работы, презентация и отчёт проверки.
+- `results/` — воспроизводимые таблицы результатов и параметры эксперимента.
+- `scripts/` — экспорт результатов из ноутбука.
+- `tests/` — проверки поиска и документов.

@@ -132,8 +132,14 @@ class RetrievalTests(unittest.TestCase):
         self.assertEqual(len(scope["evaluation"]), expected)
         self.assertTrue(scope["evaluation"].drop(columns=["model", "field", "query"]).map(lambda x: 0 <= x <= 1).all().all())
 
-    def test_notebook_copy_consistency(self):
-        self.assertEqual((ROOT / "notebook/information_retrieval.ipynb").read_bytes(), (ROOT / "notebook/information_retrieval copy.ipynb").read_bytes())
+    def test_notebook_structure_and_syntax(self):
+        notebook = json.loads((ROOT / "notebook/information_retrieval.ipynb").read_text(encoding="utf-8"))
+        self.assertEqual(notebook["nbformat"], 4)
+        code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
+        self.assertTrue(code_cells)
+        for i, cell in enumerate(code_cells):
+            with self.subTest(cell=i):
+                compile("".join(cell["source"]), f"notebook:cell-{i}", "exec")
 
 
 if __name__ == "__main__":
